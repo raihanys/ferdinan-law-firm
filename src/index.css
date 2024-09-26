@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Regular";
+  src: local("Montserrat-Regular.ttf"),
+    url("./font/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: local("Montserrat-Medium.ttf"),
+    url("./font/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: local("Montserrat-Bold.ttf"),
+    url("./font/Montserrat-Bold.ttf") format("truetype");
+}
+
+@layer components {
+  .primary-btn {
+    @apply inline-block bg-primary text-notsowhite font-primaryMedium rounded-lg hover:bg-secondary transition-transform duration-300 hover:scale-105 shadow-[0px_10px_8px_-7px_#003366] hover:shadow-[0px_10px_8px_-7px_#E8B867] py-2 px-6;
+  }
+}
+
+@layer utilities {
+  .drop-shadow {
+    filter: drop-shadow(6px 8px 10px rgba(0, 0, 0, 0.5));
+  }
+}
