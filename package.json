@@ -1,5 +1,6 @@
 {
   "name": "ferdinan-lawfirm",
+  "homepage": "https://raihanys.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -29,8 +30,5 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.12",
     "vite": "^5.4.1"
-  }
-  {
-    "homepage": "https://raihanys.github.io"
   }
 }
