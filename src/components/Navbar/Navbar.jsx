@@ -16,7 +16,7 @@ const NavbarMenu = [
   },
   {
     id: 3,
-    title: "Our Attorney",
+    title: "Profile",
     path: "#",
   },
   {
@@ -36,10 +36,10 @@ const Navbar = () => {
         className="container py-5 flex justify-between items-center"
       >
         {/* Logo Section */}
-        <div className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-2xl">
+        <div className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-xl">
           <img
             src={Logo}
-            alt="Ferdinan Law Firm"
+            alt="Ferdinan Law Firm & Partner's"
             className="h-8 sm:h-8 md:h-10 lg:h-10 xl:h-12 w-auto"
           />
         </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
               <li key={menu.id}>
                 <a
                   href={menu.path}
-                  className="relative inline-block py-1 sm:py-2 px-3 sm:px-4 sm:text-md md:text-md lg:text-sm xl:text-md hover:text-secondary transition-colors duration-300 ease-in-out"
+                  className="relative inline-block py-1 sm:py-2 px-3 sm:px-4 sm:text-md md:text-md lg:text-sm xl:text-base hover:text-secondary transition-colors duration-300 ease-in-out"
                 >
                   <div className="absolute inset-x-0 bottom-0 h-1 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
                   {menu.title}
@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Hamburger menu Section */}
         <div className="lg:hidden">
-          <IoMdMenu className="text-3xl sm:text-4xl md:text-5xl" />
+          <IoMdMenu className="text-2xl sm:text-3xl md:text-4xl" />
         </div>
       </motion.div>
     </nav>

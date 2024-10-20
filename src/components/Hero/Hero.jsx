@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <section className="overflow-hidden relative bg-notsowhite">
       <Navbar />
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-4 lg:min-h-[472px] py-5 md:pb-14">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 lg:min-h-[472px] pt-10 pb-16 md:pt-6 md:pb-16">
         {/* Left Section */}
         <div className="flex flex-col items-center justify-center relative">
           <div className="text-center md:text-left space-y-6 lg:space-y-8 md:w-[310px] lg:w-[390px] xl:w-[450px]">
@@ -68,7 +68,7 @@ const Hero = () => {
             }}
             src={HeroPng}
             alt="Hero Img"
-            className="w-[290px] md:w-[350px] lg:w-[500px] relative z-10 drop-shadow-lg"
+            className="w-[290px] md:w-[350px] lg:w-[500px] drop-shadow-xl"
           />
         </div>
       </div>

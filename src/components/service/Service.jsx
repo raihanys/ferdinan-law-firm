@@ -70,7 +70,7 @@ const Services = [
 const Service = () => {
   return (
     <section>
-      <div className="container py-14">
+      <div className="container py-10 lg:py-14">
         <h1 className="text-lg sm:text-lg md:text-lg lg:text-2xl xl:text-3xl font-primaryBold text-left pb-10">
           Solusi Hukum
         </h1>

@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../../assets/Logo.png";
 import { motion } from "framer-motion";
 
 const FadeUp = (delay = 0) => ({
@@ -10,14 +11,74 @@ const FadeUp = (delay = 0) => ({
   },
 });
 
+const NavbarMenu = [
+  {
+    id: 1,
+    title: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "About",
+    path: "#",
+  },
+  {
+    id: 3,
+    title: "Profile",
+    path: "#",
+  },
+  {
+    id: 4,
+    title: "Contact",
+    path: "#",
+  },
+];
+
 const Location = () => {
   return (
     <section>
-      <div className="container py-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container pt-4 pb-8 md:pt-10 md:pb-8 grid grid-cols-1 md:grid-cols-3">
+        {/* logo & Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center p-6 gap-8 md:gap-12">
+          <div className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-xl w-fit h-fit">
+            <img
+              src={Logo}
+              alt="Ferdinan Law Firm"
+              className="h-8 sm:h-8 md:h-10 lg:h-10 xl:h-12 w-auto"
+            />
+          </div>
+          <div className="text-left">
+            <h1 className="text-sm md:text-md lg:text-lg xl:text-xl font-primaryBold">
+              Links
+            </h1>
+            <motion.p
+              variants={FadeUp(0.2)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="text-xs md:text-sm lg:text-md xl:text-lg"
+            >
+              <ul className="list-none mt-4 space-y-2">
+                {NavbarMenu.map((menu) => (
+                  <li key={menu.id}>
+                    <a
+                      href={menu.path}
+                      className="inline-block text-xs md:text-sm lg:text-md xl:text-lg hover:text-secondary transition-colors duration-300 ease-in-out"
+                    >
+                      <div className="absolute inset-x-0 bottom-0 h-1 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+                      {menu.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.p>
+          </div>
+        </div>
+
         {/* Location Detail */}
         <div className="flex flex-col justify-center p-6">
-          <div className="text-center md:text-left space-y-2 mb-8">
-            <h1 className="text-md md:text-lg lg:text-xl xl:text-2xl font-primaryBold">
+          <div className="text-left space-y-2 mb-8">
+            <h1 className="text-sm md:text-md lg:text-lg xl:text-xl font-primaryBold">
               Lokasi Kantor
             </h1>
             <motion.h2
@@ -25,13 +86,14 @@ const Location = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="text-sm md:text-md lg:text-lg xl:text-xl"
+              className="text-xs md:text-sm lg:text-md xl:text-lg"
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Jl. Jatinegara Barat No.166-H, RW.01, RT.01, DKI, Daerah Khusus
+              Ibukota Jakarta 13330
             </motion.h2>
           </div>
-          <div className="text-center md:text-left space-y-2">
-            <h1 className="text-md md:text-lg lg:text-xl xl:text-2xl font-primaryBold">
+          <div className="text-left space-y-2">
+            <h1 className="text-sm md:text-md lg:text-lg xl:text-xl font-primaryBold">
               Nomor Telepon
             </h1>
             <motion.p
@@ -39,7 +101,7 @@ const Location = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="text-sm md:text-md lg:text-lg xl:text-xl"
+              className="text-xs md:text-sm lg:text-md xl:text-lg"
             >
               +62 XXX-XXX-XXXX
             </motion.p>
@@ -52,17 +114,21 @@ const Location = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="relative"
+          className="p-6"
         >
           <iframe
-            className="w-full h-32 md:h-64 rounded-3xl shadow-xl"
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d991.5730064235428!2d106.86544926950724!3d-6.225173666412925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMzAuNiJTIDEwNsKwNTEnNTcuOSJF!5e0!3m2!1sen!2sid!4v1727102157420!5m2!1sen!2sid"
+            className="w-full h-64 md:h-44 xl:h-64 rounded-3xl shadow-xl"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d935.028753265771!2d106.86623092151936!3d-6.224748212882009!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f37c8a9722a1%3A0x55c7effcd776778b!2sSewa%20Ruang%20Kantor%20tahunan%20dan%20Taman%20Parkir%20Bulanan!5e0!3m2!1sen!2sid!4v1728495093295!5m2!1sen!2sid"
             style={{ border: "0" }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </motion.div>
+      </div>
+      <div className="text-center text-xs md:text-xs lg:text-sm xl:text-md pb-8 px-16">
+        &copy; {new Date().getFullYear()} Ferdinan Law Firm & Partner's. All
+        rights reserved.
       </div>
     </section>
   );
