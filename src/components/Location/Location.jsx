@@ -15,26 +15,57 @@ const NavbarMenu = [
   {
     id: 1,
     title: "Home",
-    path: "/",
+    path: "#home",
   },
   {
     id: 2,
     title: "About",
-    path: "#",
+    path: "#about",
   },
   {
     id: 3,
     title: "Profile",
-    path: "#",
+    path: "#profile",
   },
   {
     id: 4,
     title: "Contact",
-    path: "#",
+    path: "#contact",
   },
 ];
 
+const smoothScroll = (target, duration) => {
+  const start = window.pageYOffset;
+  const targetPosition = target.getBoundingClientRect().top + start;
+  const offset = window.innerHeight / 2 - target.clientHeight / 2;
+  const end = targetPosition - offset;
+
+  const distance = end - start;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    window.scrollTo(0, start + distance * progress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
 const Location = () => {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id.replace("#", ""));
+    if (section) {
+      smoothScroll(section, 650);
+    }
+  };
+
   return (
     <section>
       <div className="container pt-4 pb-8 md:pt-10 md:pb-8 grid grid-cols-1 md:grid-cols-3">
@@ -61,13 +92,13 @@ const Location = () => {
               <ul className="list-none mt-4 space-y-2">
                 {NavbarMenu.map((menu) => (
                   <li key={menu.id}>
-                    <a
-                      href={menu.path}
+                    <button
+                      onClick={() => handleScroll(menu.path)}
                       className="inline-block text-xs md:text-sm lg:text-md xl:text-lg hover:text-secondary transition-colors duration-300 ease-in-out"
                     >
                       <div className="absolute inset-x-0 bottom-0 h-1 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
                       {menu.title}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

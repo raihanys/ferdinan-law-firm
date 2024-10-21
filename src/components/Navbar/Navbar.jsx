@@ -7,24 +7,57 @@ const NavbarMenu = [
   {
     id: 1,
     title: "Home",
-    path: "/",
+    path: "#home",
   },
   {
     id: 2,
     title: "About",
-    path: "#",
+    path: "#about",
   },
   {
     id: 3,
     title: "Profile",
-    path: "#",
+    path: "#profile",
   },
   {
     id: 4,
     title: "Contact",
-    path: "#",
+    path: "#contact",
   },
 ];
+
+const smoothScroll = (target, duration) => {
+  const start = window.pageYOffset;
+  const targetPosition = target.getBoundingClientRect().top + start;
+
+  // Hitung posisi scroll agar elemen target berada di tengah layar
+  const offset = window.innerHeight / 2 - target.clientHeight / 2;
+  const end = targetPosition - offset;
+
+  const distance = end - start;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    window.scrollTo(0, start + distance * progress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    smoothScroll(section, 650);
+  }
+};
 
 const Navbar = () => {
   return (
@@ -43,18 +76,19 @@ const Navbar = () => {
             className="h-8 sm:h-8 md:h-10 lg:h-10 xl:h-12 w-auto"
           />
         </div>
+
         {/* Menu Section */}
         <div className="hidden lg:block">
           <ul className="flex items-center gap-4 sm:gap-6 md:gap-4 font-primaryMedium">
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
-                <a
-                  href={menu.path}
+                <button
+                  onClick={() => scrollToSection(menu.path.replace("#", ""))}
                   className="relative inline-block py-1 sm:py-2 px-3 sm:px-4 sm:text-md md:text-md lg:text-sm xl:text-base hover:text-secondary transition-colors duration-300 ease-in-out"
                 >
                   <div className="absolute inset-x-0 bottom-0 h-1 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
                   {menu.title}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

@@ -24,10 +24,43 @@ export const FadeUp = (delay) => {
   };
 };
 
+const smoothScroll = (target, duration) => {
+  const start = window.pageYOffset;
+  const targetPosition = target.getBoundingClientRect().top + start;
+  const offset = window.innerHeight / 2 - target.clientHeight / 2;
+  const end = targetPosition - offset;
+
+  const distance = end - start;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    window.scrollTo(0, start + distance * progress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
 const Hero = () => {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      smoothScroll(section, 650);
+    }
+  };
+
   return (
     <section className="overflow-hidden relative bg-notsowhite">
-      <Navbar />
+      <section id="home">
+        <Navbar />
+      </section>
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 lg:min-h-[472px] pt-10 pb-16 md:pt-6 md:pb-16">
         {/* Left Section */}
         <div className="flex flex-col items-center justify-center relative">
@@ -49,8 +82,11 @@ const Hero = () => {
               animate="animate"
               className="flex justify-center md:justify-start"
             >
-              <button className="primary-btn flex items-center text-xs sm:text-xs md:text-xs lg:text-sm xl:text-md gap-3 group">
-                Hubungi Kami{" "}
+              <button
+                onClick={() => handleScroll("contact")}
+                className="primary-btn flex items-center text-xs sm:text-xs md:text-xs lg:text-sm xl:text-md gap-3 group"
+              >
+                Hubungi Kami
                 <IoIosArrowRoundForward className="text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl group-hover:translate-x-2 group-hover:rotate-90 transition-transform duration-300" />
               </button>
             </motion.div>

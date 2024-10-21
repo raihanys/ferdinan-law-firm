@@ -101,22 +101,46 @@ const TeamCard = ({ img, name, title, bio, onReadMore, index }) => {
 const Modal = ({ team, onClose }) => {
   if (!team) return null;
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 max-h-[80vh] overflow-y-auto">
-        <h2 className="text-xl font-bold mb-2">{team.name}</h2>
-        <p className="text-sm text-gray-700 mb-4">{team.title}</p>
-        {/* Mapping bio paragraphs */}
-        {team.bio.map((paragraph, index) => (
-          <p key={index} className="mb-4 text-justify text-sm leading-relaxed">
-            {paragraph}
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white p-6 rounded-2xl shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-[90vh] overflow-y-auto flex flex-col lg:flex-row"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Team Image */}
+        <div className="flex-shrink-0 lg:w-1/3 mt-1 lg:mt-0 mb-6 lg:mb-0 flex justify-center items-center">
+          <img
+            className="w-full h-auto rounded-2xl"
+            src={team.img}
+            alt={`${team.name} - ${team.title}`}
+          />
+        </div>
+        {/* Team Info */}
+        <div className="lg:w-2/3 lg:pl-6 flex flex-col justify-center">
+          <h2 className="text-xl md:text-2xl lg:text-lg xl:text-xl font-bold mb-2 text-center lg:text-left">
+            {team.name}
+          </h2>
+          <p className="text-base md:text-lg lg:text-sm xl:text-base text-gray-700 mb-4 text-center lg:text-left">
+            {team.title}
           </p>
-        ))}
-        <button
-          onClick={onClose}
-          className="mt-4 px-4 py-2 primary-btn shadow-none hover:shadow-none text-white rounded-lg"
-        >
-          Close
-        </button>
+          {/* Mapping bio paragraphs */}
+          {team.bio.map((paragraph, index) => (
+            <p
+              key={index}
+              className="mt-2 text-justify text-sm md:text-base lg:text-xs xl:text-sm leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
+          <button
+            onClick={onClose}
+            className="mt-7 px-4 py-2 primary-btn shadow-none hover:shadow-none text-white rounded-lg lg:hidden"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -8,11 +8,21 @@ import Location from "./components/Location/Location";
 const App = () => {
   return (
     <main className="overflow-x-hidden bg-white text-black font-primaryRegular">
-      <Hero />
-      <Service />
-      <Banner />
-      <Teams />
-      <Location />
+      <section>
+        <Hero />
+      </section>
+      <section>
+        <Service />
+      </section>
+      <section id="about">
+        <Banner />
+      </section>
+      <section id="profile">
+        <Teams />
+      </section>
+      <section id="contact">
+        <Location />
+      </section>
     </main>
   );
 };
