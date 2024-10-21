@@ -11,6 +11,14 @@ const FadeUp = (delay = 0) => ({
   },
 });
 
+const fadeIn = (delay = 0) => ({
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { delay: delay, duration: 0.6, ease: "easeInOut" },
+  },
+});
+
 const NavbarMenu = [
   {
     id: 1,
@@ -71,13 +79,19 @@ const Location = () => {
       <div className="container pt-4 pb-8 md:pt-10 md:pb-8 grid grid-cols-1 md:grid-cols-3">
         {/* logo & Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center p-6 gap-8 md:gap-12">
-          <div className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-xl w-fit h-fit">
+          <motion.div
+            variants={fadeIn(0.2)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-xl w-fit h-fit"
+          >
             <img
               src={Logo}
               alt="Ferdinan Law Firm"
               className="h-8 sm:h-8 md:h-10 lg:h-10 xl:h-12 w-auto"
             />
-          </div>
+          </motion.div>
           <div className="text-left">
             <h1 className="text-sm md:text-md lg:text-lg xl:text-xl font-primaryBold">
               Links
