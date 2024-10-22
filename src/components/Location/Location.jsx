@@ -148,7 +148,21 @@ const Location = () => {
               viewport={{ once: true }}
               className="text-xs md:text-sm lg:text-md xl:text-lg"
             >
-              +62 XXX-XXX-XXXX
+              <a
+                href="https://wa.me/62818116107"
+                className="hover:text-secondary hover:underline"
+              >
+                0818 1161 07
+              </a>
+            </motion.p>
+            <motion.p
+              variants={FadeUp(0.2)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="text-xs md:text-sm lg:text-md xl:text-lg"
+            >
+              0812 8049 8649
             </motion.p>
           </div>
         </div>
