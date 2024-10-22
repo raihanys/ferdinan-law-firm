@@ -1,5 +1,5 @@
-import React from "react";
-import { IoMdMenu } from "react-icons/io";
+import React, { useState } from "react";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Logo from "../../assets/Logo.png";
 import { motion } from "framer-motion";
 
@@ -60,6 +60,12 @@ const scrollToSection = (id) => {
 };
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav>
       <motion.div
@@ -69,7 +75,7 @@ const Navbar = () => {
         className="container py-5 flex justify-between items-center"
       >
         {/* Logo Section */}
-        <div className="bg-primary p-2 sm:p-2.5 md:p-3 rounded-xl">
+        <div className="bg-primary p-2.5 md:p-3 rounded-xl">
           <img
             src={Logo}
             alt="Ferdinan Law Firm & Partner's"
@@ -77,7 +83,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Menu Section */}
+        {/* Menu Section for Large Screen */}
         <div className="hidden lg:block">
           <ul className="flex items-center gap-4 sm:gap-6 md:gap-4 font-primaryMedium">
             {NavbarMenu.map((menu) => (
@@ -96,8 +102,43 @@ const Navbar = () => {
 
         {/* Mobile Hamburger menu Section */}
         <div className="lg:hidden">
-          <IoMdMenu className="text-2xl sm:text-3xl md:text-4xl" />
+          <button onClick={toggleMenu}>
+            <IoMdMenu className="text-3xl md:text-4xl cursor-pointer" />
+          </button>
         </div>
+      </motion.div>
+
+      {/* Mobile Menu */}
+      <motion.div
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : "100%" }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className={`fixed inset-0 bg-primary z-50 lg:hidden ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
+        <button
+          onClick={toggleMenu}
+          className="fixed top-7 right-4 md:top-8 md:right-12 text-white text-3xl md:text-4xl"
+        >
+          <IoMdClose />
+        </button>
+
+        <ul className="flex flex-col items-center justify-start h-full pt-36 gap-8 text-white font-primaryMedium text-xl">
+          {NavbarMenu.map((menu) => (
+            <li key={menu.id}>
+              <button
+                onClick={() => {
+                  scrollToSection(menu.path.replace("#", ""));
+                  toggleMenu();
+                }}
+                className="hover:text-secondary transition-colors duration-300 ease-in-out"
+              >
+                {menu.title}
+              </button>
+            </li>
+          ))}
+        </ul>
       </motion.div>
     </nav>
   );
