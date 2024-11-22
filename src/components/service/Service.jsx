@@ -1,6 +1,6 @@
 import React from "react";
 import { GoLaw } from "react-icons/go";
-import { FaHandshake, FaBuilding, FaMoneyBillWave } from "react-icons/fa";
+import { FaHandshake, FaBuilding, FaComments } from "react-icons/fa";
 import { MdOutlineCorporateFare, MdEditDocument } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -25,44 +25,44 @@ const SlideLeft = (delay) => {
 const Services = [
   {
     id: 1,
-    title: "Pendapat Hukum",
+    title: "Litigasi dan Non Litigasi",
     link: "#",
     icon: <GoLaw />,
     delay: 0.1,
   },
   {
     id: 2,
-    title: "Perjanjian",
+    title: "Hukum Korporasi",
     link: "#",
-    icon: <FaHandshake />,
+    icon: <MdOutlineCorporateFare />,
     delay: 0.15,
   },
   {
     id: 3,
-    title: "Aksi Korporasi",
+    title: "⁠Hukum Kontrak / Perjanjian",
     link: "#",
-    icon: <MdOutlineCorporateFare />,
+    icon: <FaHandshake />,
     delay: 0.2,
   },
   {
     id: 4,
-    title: "Pendirian Perusahaan",
+    title: "⁠Legal due diligence",
     link: "#",
-    icon: <FaBuilding />,
+    icon: <MdEditDocument />,
     delay: 0.25,
   },
   {
     id: 5,
-    title: "Penyelesaian Sengketa",
+    title: "Hubungan Industrial",
     link: "#",
-    icon: <MdEditDocument />,
+    icon: <FaBuilding />,
     delay: 0.3,
   },
   {
     id: 6,
-    title: "Hukum Perpajakan",
+    title: "Opini Hukum",
     link: "#",
-    icon: <FaMoneyBillWave />,
+    icon: <FaComments />,
     delay: 0.35,
   },
 ];

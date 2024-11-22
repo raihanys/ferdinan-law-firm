@@ -47,7 +47,7 @@ const Banner = () => {
 
   return (
     <section>
-      <div className="container pt-2 pb-10 md:pt-10 lg:pt-14 md:pb-16 lg:pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+      <div className="container pt-2 pb-10 md:pt-10 lg:pt-14 md:pb-16 lg:pb-20 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-14">
         {/* Banner Image */}
         <div className="flex justify-center items-start">
           <motion.img
@@ -57,7 +57,7 @@ const Banner = () => {
             viewport={{ once: true }}
             src={BannerPng}
             alt="Banner"
-            className="w-[300px] lg:w-[400px] xl:w-[450px] relative object-cover drop-shadow"
+            className="w-[300px] lg:w-[400px] xl:w-[450px] relative object-cover drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
           />
         </div>
 
