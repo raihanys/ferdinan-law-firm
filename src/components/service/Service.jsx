@@ -1,7 +1,8 @@
 import React from "react";
 import { GoLaw } from "react-icons/go";
 import { FaHandshake, FaBuilding, FaComments } from "react-icons/fa";
-import { MdOutlineCorporateFare, MdEditDocument } from "react-icons/md";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { MdEditDocument } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const SlideLeft = (delay) => {
@@ -34,7 +35,7 @@ const Services = [
     id: 2,
     title: "Hukum Korporasi",
     link: "#",
-    icon: <MdOutlineCorporateFare />,
+    icon: <FaBuilding />,
     delay: 0.15,
   },
   {
@@ -55,7 +56,7 @@ const Services = [
     id: 5,
     title: "Hubungan Industrial",
     link: "#",
-    icon: <FaBuilding />,
+    icon: <FaPeopleGroup />,
     delay: 0.3,
   },
   {
