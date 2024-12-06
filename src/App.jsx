@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./components/Hero/Hero";
 import Service from "./components/service/Service";
 import Banner from "./components/Banner/Banner";
+import Porto from "./components/Porto/Porto";
 import Teams from "./components/Teams/Teams";
 import Location from "./components/Location/Location";
 
@@ -16,6 +17,9 @@ const App = () => {
       </section>
       <section id="about">
         <Banner />
+      </section>
+      <section>
+        <Porto />
       </section>
       <section id="profile">
         <Teams />
