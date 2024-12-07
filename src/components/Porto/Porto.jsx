@@ -62,7 +62,7 @@ const Porto = () => {
         </motion.h2>
 
         <motion.p
-          className="text-center md:text-left text-sm lg:text-base pb-5"
+          className="text-center md:text-left text-sm lg:text-base pb-3 md:pb-5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
