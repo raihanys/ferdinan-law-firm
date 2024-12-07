@@ -145,7 +145,6 @@ const Banner = () => {
                 animate="animate"
                 whileHover="hover"
                 whileTap="tap"
-                viewport={{ once: true }}
                 onClick={handleToggleText}
                 aria-expanded={showMore}
                 className="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg hover:underline font-primaryMedium"

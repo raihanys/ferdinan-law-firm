@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Porto = () => {
   const timelineData = [
@@ -46,26 +47,63 @@ const Porto = () => {
   return (
     <section>
       <div className="container pt-3 pb-14">
-        <h1 className="text-lg sm:text-lg md:text-lg lg:text-2xl xl:text-3xl font-primaryBold text-center md:text-left pb-10">
+        <h1 className="text-lg sm:text-lg md:text-lg lg:text-2xl xl:text-3xl font-primaryBold text-center md:text-left pb-5 lg:pb-10">
           Portofolio Penanganan Kasus
         </h1>
-        <h2 className="text-md sm:text-md md:text-md lg:text-xl xl:text-2xl font-primaryBold text-center md:text-left pb-5">
+
+        <motion.h2
+          className="text-md sm:text-md md:text-md lg:text-xl xl:text-2xl font-primaryBold text-center md:text-left pb-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Penanganan Kasus Perdata
-        </h2>
-        <p className="text-center md:text-left text-md md:text-sm lg:text-lg pb-5">
+        </motion.h2>
+
+        <motion.p
+          className="text-center md:text-left text-sm lg:text-base pb-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           Tingkat kemenanangan 99% dalam penanganan Perkara Perdata
-        </p>
+        </motion.p>
+
         {/* Timeline Container */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.3 },
+            },
+          }}
+        >
           {/* Timeline Items */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-center">
             {timelineData.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                whileHover={{ scale: 1.05 }}
                 className="flex flex-col items-center space-y-2 md:space-y-4 p-4"
               >
                 {/* Dot */}
-                <div className="flex-shrink-0 w-6 h-6 bg-primary rounded-full border-4 border-white"></div>
+                <motion.div
+                  className="flex-shrink-0 w-6 h-6 bg-primary rounded-full border-4 border-white"
+                  whileHover={{
+                    scale: 1.2,
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                  }}
+                ></motion.div>
                 {/* Content */}
                 <div className="mt-5 md:mt-0">
                   <h2 className="text-center text-md md:text-sm lg:text-lg font-primaryBold pb-4">
@@ -75,57 +113,86 @@ const Porto = () => {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-        <h2 className="text-md sm:text-md md:text-md lg:text-xl xl:text-2xl font-primaryBold text-center md:text-left pt-8 pb-5">
+        </motion.div>
+
+        <motion.h2
+          className="text-md sm:text-md md:text-md lg:text-xl xl:text-2xl font-primaryBold text-center md:text-left pt-8 pb-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           Penanganan Kasus Pidana
-        </h2>
-        <p className="text-center text-md md:text-left md:text-sm lg:text-lg pb-8">
+        </motion.h2>
+
+        <motion.p
+          className="text-center md:text-justify text-sm md:text-sm lg:text-base pb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Dalam menangani Perkara Pidana yakni sudah berbagai Laporan Pidana
           yang sukses dilakukan dengan tingkat penyelesaian dan dianggap menang
           80%, khususnya dalam penanganan Perkara Tindak Pidana Penipuan, Tindak
           Pidana Penggelapan, Tindak Pidana Pencucian Uang, Tindak Pidana
           Perbuatan tidak menyenangkan, Tindak Pidana pelanggaran Rahasia Bank
           dan Penyalagunaan Data Pribadi;
-        </p>
+        </motion.p>
         {/* Kasus Pidana Table */}
-        <div className="overflow-x-auto border-collapse border border-notsowhite rounded-2xl">
+        <motion.div
+          className="overflow-x-auto border-collapse border border-notsowhite rounded-2xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 0.5 }}
+        >
           <table className="table-auto w-full">
             <thead>
               <tr className="bg-gray-200">
-                <th className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
                   Klien
                 </th>
-                <th className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
                   Layanan
                 </th>
-                <th className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
                   Periode
                 </th>
               </tr>
             </thead>
             <tbody>
               {TableData.map((row, index) => (
-                <tr
+                <motion.tr
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
                   className={index % 2 === 0 ? "bg-white" : "bg-notsowhite"}
                 >
-                  <td className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
                     {row.client}
                   </td>
-                  <td className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
                     {row.service}
                   </td>
-                  <td className="text-sm md:text-sm lg:text-md border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
                     {row.period}
                   </td>
-                </tr>
+                </motion.tr>
               ))}
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
