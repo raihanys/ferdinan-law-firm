@@ -224,8 +224,11 @@ const Location = () => {
         </motion.div>
       </div>
       <div className="text-center text-xs md:text-xs lg:text-sm xl:text-md pb-8 px-16">
-        &copy; {new Date().getFullYear()} Ferdinan Law Firm & Partner's. All
-        rights reserved.
+        &copy; 2024
+        {new Date().getFullYear() > 2024
+          ? `-${new Date().getFullYear()}`
+          : ""}{" "}
+        Ferdinan Law Firm & Partner's. All rights reserved.
       </div>
     </section>
   );
