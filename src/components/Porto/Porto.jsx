@@ -14,7 +14,7 @@ const Porto = () => {
         "Kuasa Hukum di Pengadilan Negeri Pandeglang selaku Tergugat I Perkara No. 8/Pdt.G/2022/PN. Pdl",
     },
     {
-      title: "Pembeli Objek Lelang Sengketa",
+      title: "Pemenang Lelang dengan Objek Tanah Bangunan Sengketa",
       description:
         "Kuasa Hukum di Pengadilan Negeri Jakarta Barat selaku Tergugat I Perkara No. 63/Pdt.G/2022/PN. Cbi",
     },
@@ -28,18 +28,18 @@ const Porto = () => {
   const TableData = [
     {
       client: "PT Bank Central Asia, Tbk Kantor Wilayah X",
-      service: "Litigasi Pendampingan Saksi",
+      service: "Retainer Litigasi & Pendampingan Saksi",
       period: "Oktober 2021 s/d. saat ini",
     },
     {
       client:
         "PT Bank Central Asia, Tbk Kantor Pusat Satuan Kerja Penyelamatan Kredit",
-      service: "Somasi Pengosongan & Debitur Macet",
+      service: "Retainer Somasi Pengosongan & Debitur Macet",
       period: "1 (satu) Tahun 2022",
     },
     {
       client: "PT Bank Central Asia, Tbk Kantor Wilayah X",
-      service: "Litigasi Pendampingan Saksi",
+      service: "Retainer Litigasi & Pendampingan Saksi",
       period: "Agustus 2024 s/d. saat ini",
     },
   ];
@@ -68,7 +68,7 @@ const Porto = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Tingkat kemenanangan 99% dalam penanganan Perkara Perdata
+          Tingkat kemenanangan 90% dalam penanganan Perkara Perdata
         </motion.p>
 
         {/* Timeline Container */}
@@ -106,10 +106,10 @@ const Porto = () => {
                 ></motion.div>
                 {/* Content */}
                 <div className="mt-5 md:mt-0">
-                  <h2 className="text-center text-md md:text-sm lg:text-lg font-primaryBold pb-4">
+                  <h2 className="text-center text-sm md:text-sm lg:text-lg font-primaryBold pb-4">
                     {item.title}
                   </h2>
-                  <p className="text-center md:text-left text-sm md:text-xs lg:text-sm !tracking-tighter">
+                  <p className="text-center md:text-left text-xs md:text-xs lg:text-sm !tracking-tighter">
                     {item.description}
                   </p>
                 </div>
@@ -135,12 +135,13 @@ const Porto = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Dalam menangani Perkara Pidana yakni sudah berbagai Laporan Pidana
-          yang sukses dilakukan dengan tingkat penyelesaian dan dianggap menang
-          80%, khususnya dalam penanganan Perkara Tindak Pidana Penipuan, Tindak
-          Pidana Penggelapan, Tindak Pidana Pencucian Uang, Tindak Pidana
-          Perbuatan tidak menyenangkan, Tindak Pidana pelanggaran Rahasia Bank
-          dan Penyalagunaan Data Pribadi;
+          Dalam menangani Perkara Pidana yakni sudah Berbagai Laporan pidana
+          sukses dilakukan dengan tingkat penyelesaian yang efisien dengan
+          presentasi dianggap menang 80% serta dalam beberapa kasus dapat
+          membuat klien lepas dari jeratan pidana; Spesialitas dalam penanganan
+          Perkara Tindak Pidana Penipuan, Tindak Pidana Penggelapan, Tindak
+          Pidana Pencucian Uang, Tindak Pidana Perbuatan tidak menyenangkan,
+          Tindak Pidana pelanggaran Rahasia Bank dan Penyalagunaan Data Pribadi;
         </motion.p>
         {/* Kasus Pidana Table */}
         <motion.div
@@ -157,13 +158,13 @@ const Porto = () => {
           <table className="table-auto w-full">
             <thead>
               <tr className="bg-gray-200">
-                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
                   Klien
                 </th>
-                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
                   Layanan
                 </th>
-                <th className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2 text-left">
+                <th className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2 text-left">
                   Periode
                 </th>
               </tr>
@@ -179,13 +180,13 @@ const Porto = () => {
                   transition={{ delay: index * 0.2 }}
                   className={index % 2 === 0 ? "bg-white" : "bg-notsowhite"}
                 >
-                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2">
                     {row.client}
                   </td>
-                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2">
                     {row.service}
                   </td>
-                  <td className="text-xs md:text-sm lg:text-base border border-gray-300 px-4 py-2">
+                  <td className="text-xs md:text-sm lg:text-md border border-gray-300 px-4 py-2">
                     {row.period}
                   </td>
                 </motion.tr>

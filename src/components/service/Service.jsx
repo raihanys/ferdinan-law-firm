@@ -83,7 +83,11 @@ const Service = () => {
               initial="initial"
               whileInView={"animate"}
               viewport={{ once: true }}
-              className="bg-notsowhite rounded-2xl flex flex-col gap-2 items-center justify-center p-4 py-6 hover:bg-white hover:scale-110 transition-transform duration-300 hover:shadow-2xl"
+              whileHover={{
+                scale: 1.2,
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+              }}
+              className="bg-notsowhite rounded-2xl flex flex-col gap-2 items-center justify-center p-4 py-6"
             >
               <div className="text-2xl md:text-2xl lg:text-3xl mb-4">
                 {service.icon}
