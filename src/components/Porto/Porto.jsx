@@ -135,13 +135,13 @@ const Porto = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Dalam menangani Perkara Pidana yakni sudah Berbagai Laporan pidana
-          sukses dilakukan dengan tingkat penyelesaian yang efisien dengan
-          presentasi dianggap menang 80% serta dalam beberapa kasus dapat
-          membuat klien lepas dari jeratan pidana; Spesialitas dalam penanganan
-          Perkara Tindak Pidana Penipuan, Tindak Pidana Penggelapan, Tindak
-          Pidana Pencucian Uang, Tindak Pidana Perbuatan tidak menyenangkan,
-          Tindak Pidana pelanggaran Rahasia Bank dan Penyalagunaan Data Pribadi;
+          Berbagai Laporan pidana sukses dilakukan dengan tingkat penyelesaian
+          yang efisien dengan presentasi dianggap menang 80% serta dalam
+          beberapa kasus dapat membuat klien lepas dari jeratan pidana;
+          Spesialitas dalam penanganan Perkara Tindak Pidana Penipuan, Tindak
+          Pidana Penggelapan, Tindak Pidana Pencucian Uang, Tindak Pidana
+          Perbuatan tidak menyenangkan, Tindak Pidana pelanggaran Rahasia Bank
+          dan Penyalagunaan Data Pribadi;
         </motion.p>
         {/* Kasus Pidana Table */}
         <motion.div
