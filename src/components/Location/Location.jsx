@@ -233,3 +233,5 @@ const Location = () => {
     </section>
   );
 };
+
+export default Location;
