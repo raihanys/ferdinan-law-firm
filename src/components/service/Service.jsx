@@ -47,7 +47,7 @@ const Services = [
   },
   {
     id: 4,
-    title: "⁠Legal due diligence",
+    title: "⁠Legal Due Diligence",
     link: "#",
     icon: <MdEditDocument />,
     delay: 0.25,
