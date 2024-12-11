@@ -215,7 +215,7 @@ const Location = () => {
         >
           <iframe
             className="w-full h-56 xl:h-64 rounded-3xl shadow-xl"
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d495.78649356547544!2d106.86577221729647!3d-6.225183886290269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMzAuNyJTIDEwNsKwNTEnNTguMCJF!5e0!3m2!1sen!2sid!4v1733722153082!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d909.2757214930789!2d106.8656540687333!3d-6.22559797220253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3003439dc73%3A0x46d43f1899ebb1f!2sKantor%20Konsultan%20Hukum%20Ferdinan%20-%20FLF!5e0!3m2!1sid!2sid!4v1733915618550!5m2!1sid!2sid"
             style={{ border: "0" }}
             allowFullScreen=""
             loading="lazy"
@@ -233,5 +233,3 @@ const Location = () => {
     </section>
   );
 };
-
-export default Location;
