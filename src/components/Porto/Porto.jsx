@@ -38,7 +38,7 @@ const Porto = () => {
       period: "1 (satu) Tahun 2022",
     },
     {
-      client: "PT Bank Central Asia, Tbk Kantor Wilayah X",
+      client: "PT Bank Central Asia, Tbk Kantor Wilayah IX",
       service: "Retainer Litigasi & Pendampingan Saksi",
       period: "Agustus 2024 s/d. saat ini",
     },
