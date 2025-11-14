@@ -71,12 +71,13 @@ const Hero = () => {
               animate="animate"
               className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-primaryBold !leading-snug"
             >
-              Memberikan <span className="text-secondary">Bantuan Hukum </span>
-              serta<span className="text-secondary"> Solusi Hukum </span>
-              yang Berkualitas dan Terpercaya untuk Menjamin{" "}
-              <span className="text-secondary"> Kepastian</span> dan{" "}
-              <span className="text-secondary">Keadilan </span>
-              dalam Setiap Langkah.
+              Melayani dalam pemberian{" "}
+              <span className="text-secondary">Bantuan </span>
+              dan<span className="text-secondary"> Solusi Hukum </span>
+              yang Berkualitas, Terpercaya serta berintegritas untuk menjamin{" "}
+              <span className="text-secondary"> Kepastian Hukum</span> dan{" "}
+              <span className="text-secondary">Berkeadilan </span>
+              kepada klien.
             </motion.h1>
             <motion.div
               variants={FadeUp(1)}
