@@ -42,6 +42,16 @@ const Porto = () => {
       service: "Retainer Litigasi & Pendampingan Saksi",
       period: "Agustus 2024 s/d. saat ini",
     },
+    {
+      client: "AJB Bumiputera 1912",
+      service: " Retainer Konsultan Hukum",
+      period: "Februari 2025 s/d. saat ini",
+    },
+    {
+      client: "HMT Tour & Travel",
+      service: "Retainer Konsultan Hukum",
+      period: "April 2025 s/d. saat ini",
+    },
   ];
 
   return (
